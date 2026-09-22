@@ -6,8 +6,11 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 16:41:22 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/09/21 16:43:30 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/09/22 19:55:03 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*memset()
+void	*memset(void *s, int c, size_t num)
+{
+
+}

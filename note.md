@@ -32,7 +32,46 @@ To test them against the system standard, you may need to include
 
 
 ## testing in the sandbox
-```
+```bash
 cc -Wall -Wextra -Werror -I ~/42/core/libft main.c ~/42/core/libft/strlen/ft_strlen.c -o test
 ```
+
+
+
+
+#### type casting
+
+
+
+#### void pointer in c
+```c
+void	*something(void *s)
+```
+store the address of any data dype
+
+
+- A void pointer can hold the address of variables of any data type.
+- Before accessing the value stored at a void pointer, it must be explicitly typecast to the appropriate pointer type.
+
+
+pointer arithmetic cannot be performed directly on void pointers because the size of the pointed object is unknown. However, some compilers such as GCC allow pointer arithmetic on void pointers by treating the size of void as 1 byte.
+
+// Increment the pointer by the size of an integer
+```c
+ptr = ptr + sizeof(int);
+```
+
+#### what is size_t in c
+
+
+
+
+https://www.reddit.com/r/C_Programming/comments/18z64qg/void_function_pointer/
+
+
+https://www.gnu.org/software/c-intro-and-ref/manual/html_node/Void-Pointers.html
+
+
+https://stackoverflow.com/questions/18899856/calling-function-pointed-by-void-pointer
+
 
