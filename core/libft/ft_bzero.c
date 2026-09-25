@@ -6,7 +6,7 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 09:43:48 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/09/24 10:14:31 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/09/25 15:34:18 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void	ft_bzero(void *s, size_t n)
 
 int	main()
 {
-	char	arr[10] = "something";
-	char	arr2[10] = "something";
+	char	arr[10] = "someth";
+	char	arr2[10] = "someth";
 	char	*ptr;
 	char	*ptr2;
 
@@ -46,7 +46,18 @@ int	main()
 	ft_bzero(ptr , 2);
 	bzero(ptr2, 2);
 
+	int	i;
 
-	printf("%c\n" , arr[6]);
-	printf("%c\n" , arr2[6]);
+	i = 0;
+	while (i < 10)
+	{
+		if (arr[i] == '\0')
+		{
+			printf("i found null on %d\n" , i);
+		}
+		i ++;
+	}
+
+	// printf("%c\n" , arr[2]);
+	// printf("%c\n" , arr2[2]);
 }
