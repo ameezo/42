@@ -1,51 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/21 16:41:22 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/09/24 09:46:12 by aal-bann         ###   ########.fr       */
+/*   Created: 2026/09/24 09:43:48 by aal-bann          #+#    #+#             */
+/*   Updated: 2026/09/24 10:14:31 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <strings.h>
 
-#include <string.h>
-void	*ft_memset(void *s, int c, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	char	*ptr;
 	int	i;
 
 	i = 0;
 	ptr = s;
-
 	while (i < n)
 	{
-		ptr[i] = c;
+		ptr[i] = '\0';
 		i ++;
 	}
-	return s;
 }
 
-
-int main()
+int	main()
 {
-	char	arr[8] = "hello";
-	char	arr2[8] = "hello";
+	char	arr[10] = "something";
+	char	arr2[10] = "something";
 	char	*ptr;
 	char	*ptr2;
 
+	ptr = arr;
+	ptr ++;
 
-	ptr = ft_memset(arr, 's', 9*sizeof(char));
-	ptr2 = memset(arr2, 's', 9*sizeof(char));
+	ptr2 = arr2;
+	ptr2 ++;
 
-	// im testing the overflow , should i resolve it in someway ?
+	// printf("oo  v%s\n" , ptr);
 	printf("%s\n" , arr);
-	printf("%s\n" , ptr);
 
-	printf("%s\n" , arr2);
-	printf("%s\n" , ptr2);
+	ft_bzero(ptr , 2);
+	bzero(ptr2, 2);
 
+
+	printf("%c\n" , arr[6]);
+	printf("%c\n" , arr2[6]);
 }
