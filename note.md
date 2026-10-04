@@ -241,6 +241,13 @@ typecast
 // (type) expression
 // (type to convert to) the value
 
+also you can cast with the unsigned int
+unsigned char
+unsgined something
+ss1 = (unsigned char *)s1;
+
+
+
 2. way two
 ```c
 char	x = 'c';
@@ -260,5 +267,44 @@ printf("%d\n" , num); // the output will be 99
 the 'a' become a double first, then devicion occours
 
 (char *) S
+
+
+
+
+```bash
+git stash # remove uncommited files from the current branch
+```
+
+
+```bash
+git merge # merge two branchs
+```
+
+
+
+## strchr Vs strrchr
+```c
+char	*str = "sometihing";
+```
+
+strchr # return the first occurrence of the character
+for example , we want the first view of i , the function returns pointer pointed to "ihing"
+
+strrchr # return pointer to the last occurrence of the character
+
+return : "ing"
+
+
+#### const char
+```c
+const char *
+```
+
+“Through this pointer, you are not allowed to modify the characters.”
+
+
+
+// try experement on pointers and const pointer to take the full understanding
+
 
 

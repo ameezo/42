@@ -1,45 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/29 15:08:26 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/09/30 16:21:20 by aal-bann         ###   ########.fr       */
+/*   Created: 2026/09/30 16:23:15 by aal-bann          #+#    #+#             */
+/*   Updated: 2026/09/30 16:39:09 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include <stdio.h>
 #include <string.h>
 
-char	*ft_strchr(const char *s, int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char	*ptr;
-
-	ptr = 0;
-	while (*s != '\0')
+	if (n == 0)
+		return 0;
+	while ((*s1 != '\0') && (*s2 != '\0') && (*s1 == *s2) && --n)
 	{
-		if (*s == c)
-		{
-			ptr = (char *)s;
-			return ptr;
-		}
-
-			// return s; // wrong
-		s ++;
+		s1 ++;
+		s2 ++;
 	}
-	return 0;
+	return (*s1 - *s2);
 }
 
-// test it in the workstation
 
-
-
-int main()
+# test it in the workstation
+int	main()
 {
-	char	*str = "sosmethsirnrg";
-	printf("%s\n" , ft_strchr(str, 'r'));
-	printf("%s\n" , strchr(str, 'r'));
+	char	*s1 = "some";
+	char	*s2 = "some\0";
+	// printf("%s\n" , ft_strncmp(s1, s2, 4));
+	printf("%d\n" , ft_strncmp(s1, s2, 4));
+	printf("%d\n" , strncmp(s1, s2, 4));
 }
