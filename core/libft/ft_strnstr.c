@@ -6,52 +6,66 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/01 18:24:33 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/10/01 19:53:42 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/10/04 17:27:50 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <bsd/string.h>
 #include <stdio.h>
 // len here is the len of character to search , in the big string
 // 		unless it reaches the end of the len or the null of haystack
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	int	i;
 	int	j;
 
 	j = 0;
 	i = 0;
-	if (*needle == '\0')
-		return (char *)haystack;
-
-	while (haystack[i] != '\0' && len--)
+	if (*little == '\0')
+		return (char *)big;
+	while (big[i] != '\0' && len)
 	{
-		if (haystack[i] == needle[j])
+		if (big[i] == little[j])
 		{
-			while (haystack[i] == needle[j] && len != 0)
+			while (big[i] == little[j] && len--)
 			{
-				printf("haystack : %c   " , haystack[i]);
-				printf("needle : %c \n" , needle[j]);
 				i ++;
 				j ++;
-				len --;
+				// len --;
+				if (little[j] == '\0')
+					return ((char *)(big + (i - j)));
 			}
-
+			j = 0;
+		}else
+		{
+			i ++;
+			len --;
 		}
-		j = 0;
-		i ++;
 	}
-
-	return "something";
+	return 0;
 }
 // locate needle in haystack
 
+int	get_len(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i ++;
+	}
+	return i;
+}
+
 int	main()
 {
-	char	*haystack = "some1234";
+	char	*haystack = "123s4ome4123some1231234";
+	int	len = get_len(haystack);
+	printf("%d\n",len);
 	char	*needle = "1234";
-	printf("%s\n" , ft_strnstr(haystack , needle, 8));
-	printf("%s\n" , strnstr(haystack , needle, 8));
+	printf("%s\n" , ft_strnstr(haystack , needle, len - 4));
+	printf("%s\n" , strnstr(haystack , needle, len - 4));
 }
 
 
