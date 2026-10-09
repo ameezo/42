@@ -308,3 +308,114 @@ const char *
 
 
 
+
+dynamic allocation
+https://www.youtube.com/watch?v=R0qIYWo8igs
+https://www.youtube.com/watch?v=SKBnxCq3HvM
+
+
+
+
+visualization of memory allocation
+https://www.youtube.com/watch?v=SuBch2MZpZM
+
+
+
+
+```c
+int something = 3;
+
+char *ptr = malloc(something * sizeof(*ptr));
+
+
+char *ptr = malloc(something * sizeof(char));
+int *ptr = malloc(something * sizeof(int));
+long *ptr = malloc(something * sizeof(long));
+```
+
+
+how to use Valgrind
+https://www.youtube.com/watch?v=DyqstSE470s
+https://www.youtube.com/watch?v=bb1bTJtgXrI
+
+```c
+cc main.c -o main -g
+```
+
+```bash
+valgrind ./main
+```
+
+```bash
+valgrind --leak-check=full ./main
+```
+
+
+
+```bash
+valgrind -s --leak-check=full ./main
+```
+
+
+
+```c
+char	*ptr;
+
+	ptr = ft_calloc(4, sizeof(char));
+	int n = 4;
+	while (*ptr == 0 && n--)
+	{
+		printf("this is null\n");
+		if (n != 0)
+			ptr ++;
+	}
+
+	printf("%s\n" , ptr);
+```
+
+
+
+###### calling malloc of zero
+reserving zero size in the heap
+```c
+
+malloc(0);
+```
+According to the specifications, malloc(0) will return either "a null pointer or a unique pointer that can be successfully passed to free()".
+
+https://stackoverflow.com/questions/2022335/whats-the-point-of-malloc0
+
+
+
+for later things
+### deallocate , release the allocation function
+https://www.youtube.com/watch?v=zHHhcdRzLcc
+
+
+
+
+
+### make file
+
+```c
+
+// this is instead of the #include "header.h"
+int	add(int a, int b);
+int sub(int a, int b);
+int	main()
+{
+
+}
+```
+
+<!-- the header file is only contain the prototype of the functions
+you can type the prototype manually and use the called functions
+ -->
+
+
+// how to compile
+```bash
+cc -c mymath.c -o mymath.o
+cc -c main.c -o main.o
+cc main.o mymath.o -c main
+```

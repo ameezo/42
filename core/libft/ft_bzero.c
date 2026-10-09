@@ -6,7 +6,7 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 09:43:48 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/09/25 15:34:18 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/10/09 09:22:27 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char	*ptr;
+	unsigned char	*ptr;
 	int	i;
 
 	i = 0;
