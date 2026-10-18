@@ -6,13 +6,13 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 12:39:17 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/09/21 12:42:02 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/10/11 13:45:32 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(char c)
 {
-	if (c >= 0 && <= 9)
+	if (c >= 0 && c <= 9)
 		return 1;
 	return 0;
 }

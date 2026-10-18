@@ -6,7 +6,7 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 18:43:37 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/10/09 11:48:06 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/10/11 19:19:19 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 	int	i;
-	int	heap_size;
+	size_t	heap_size;
 
 
+	if (nmemb != 0 && size > (size_t)-1 / nmemb)
+		return (NULL);
 	heap_size = nmemb * size;
 	i = 0;
 	ptr = malloc(nmemb * size);

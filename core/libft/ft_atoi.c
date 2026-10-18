@@ -6,7 +6,7 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 17:29:33 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/10/04 18:43:09 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/10/11 13:56:49 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-unsigned int	ft_strlen(char *s)
+
+#include "libft.h"
+
+unsigned int	ftstrlen(char *s)
 {
 	int	i;
 
@@ -26,6 +29,7 @@ unsigned int	ft_strlen(char *s)
 
 int	ft_atoi(const char *nptr)
 {
+	// check for atoi again and again
 	int	i;
 	int	len;
 	int	big;
@@ -40,7 +44,7 @@ int	ft_atoi(const char *nptr)
 		minus ++;
 		nptr ++;
 	}
-	len = ft_strlen((char *)nptr) - 1;
+	len = ftstrlen((char *)nptr) - 1;
 	while (len--)
 		big = big * 10;
 	while (*nptr != '\0')
@@ -55,10 +59,10 @@ int	ft_atoi(const char *nptr)
 	return i;
 }
 
-int	main()
-{
-	char	*ptr;
-	ptr = "-00782t904";
-	printf("%d\n" , atoi(ptr));
-	printf("%d\n" , ft_atoi(ptr));
-}
+// int	main()
+// {
+// 	char	*ptr;
+// 	ptr = "-00782t904";
+// 	printf("%d\n" , atoi(ptr));
+// 	printf("%d\n" , ft_atoi(ptr));
+// }

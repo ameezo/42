@@ -6,7 +6,7 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/30 14:44:53 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/09/30 16:19:14 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/10/11 13:28:28 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ char	*ft_strrchr(const char *s, int c)
 
 
 
-// test it in the workstation
+// // test it in the workstation
 
 
-int	main()
-{
-	char	str[50] = "somethingingi";
-	// printf("%s\n" , strrchr(str, 's'));
-	// printf("the return value : %s\n" , fun(str));
+// int	main()
+// {
+// 	char	str[50] = "somethingingi";
+// 	// printf("%s\n" , strrchr(str, 's'));
+// 	// printf("the return value : %s\n" , fun(str));
 
-	printf("%s\n" , ft_strrchr(str, 'i'));
-}
+// 	printf("%s\n" , ft_strrchr(str, 'i'));
+// }

@@ -6,7 +6,7 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 10:18:55 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/09/28 16:03:29 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/10/11 19:07:30 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,9 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	tmp;
 	char	*d;
 	char	*s;
-	int		i;
+	unsigned int	i;
 
 	d = (char *)dest;
 	s = (char *)src;
@@ -44,22 +43,22 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 }
 
 
-int	main()
-{
-	char	arr[10] = "ABCDEF";
-	char	*src = arr;
-	char	*dest = arr + 6;
+// int	main()
+// {
+// 	char	arr[10] = "ABCDEF";
+// 	char	*src = arr;
+// 	char	*dest = arr + 6;
 
 
-	char	arr2[10] = "ABCDEF";
-	char	*src2 = arr2;
-	char	*dest2 = arr2 + 6;
+// 	char	arr2[10] = "ABCDEF";
+// 	char	*src2 = arr2;
+// 	char	*dest2 = arr2 + 6;
 
-	printf("my fun %s\n" , (char *)ft_memmove(dest , src, 10));
+// 	printf("my fun %s\n" , (char *)ft_memmove(dest , src, 10));
 
-	printf("origin %s\n" , (char *)memmove(dest2, src2, 10));
+// 	printf("origin %s\n" , (char *)memmove(dest2, src2, 10));
 
-	printf("%s\n" , arr);
-	printf("%s\n" , arr2);
+// 	printf("%s\n" , arr);
+// 	printf("%s\n" , arr2);
 
-}
+// }

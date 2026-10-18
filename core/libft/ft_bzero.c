@@ -6,7 +6,7 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 09:43:48 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/10/09 09:22:27 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/10/11 19:06:39 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*ptr;
-	int	i;
+	unsigned long	i;
 
 	i = 0;
 	ptr = s;
@@ -27,37 +27,37 @@ void	ft_bzero(void *s, size_t n)
 	}
 }
 
-int	main()
-{
-	char	arr[10] = "someth";
-	char	arr2[10] = "someth";
-	char	*ptr;
-	char	*ptr2;
+// int	main()
+// {
+// 	char	arr[10] = "someth";
+// 	char	arr2[10] = "someth";
+// 	char	*ptr;
+// 	char	*ptr2;
 
-	ptr = arr;
-	ptr ++;
+// 	ptr = arr;
+// 	ptr ++;
 
-	ptr2 = arr2;
-	ptr2 ++;
+// 	ptr2 = arr2;
+// 	ptr2 ++;
 
-	// printf("oo  v%s\n" , ptr);
-	printf("%s\n" , arr);
+// 	// printf("oo  v%s\n" , ptr);
+// 	printf("%s\n" , arr);
 
-	ft_bzero(ptr , 2);
-	bzero(ptr2, 2);
+// 	ft_bzero(ptr , 2);
+// 	bzero(ptr2, 2);
 
-	int	i;
+// 	int	i;
 
-	i = 0;
-	while (i < 10)
-	{
-		if (arr[i] == '\0')
-		{
-			printf("i found null on %d\n" , i);
-		}
-		i ++;
-	}
+// 	i = 0;
+// 	while (i < 10)
+// 	{
+// 		if (arr[i] == '\0')
+// 		{
+// 			printf("i found null on %d\n" , i);
+// 		}
+// 		i ++;
+// 	}
 
-	// printf("%c\n" , arr[2]);
-	// printf("%c\n" , arr2[2]);
-}
+// 	// printf("%c\n" , arr[2]);
+// 	// printf("%c\n" , arr2[2]);
+// }

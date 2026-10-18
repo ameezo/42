@@ -419,3 +419,297 @@ cc -c mymath.c -o mymath.o
 cc -c main.c -o main.o
 cc main.o mymath.o -c main
 ```
+
+
+### .a files
+i will learn more about library and compile them together and the .a file
+https://stackoverflow.com/questions/10454263/command-to-compile-c-files-with-a-files
+
+
+
+## 2d array
+```c
+int	arr[4][4] = {{1 , 2 , 3 , 4} , {1, 2, ....}}
+```
+
+## dynamic 2d array
+https://www.youtube.com/watch?v=aR7tkVj3UU0
+allocate 2d array with 3 rows and columns
+3 * 3
+-------------
+|	|	|	|
+-------------
+|	|	|	|
+-------------
+|	|	|	|
+-------------
+
+
+what you are doing is to allocate a pointers holder , that each point to strings
+allocate an array of pointer , and each pointer point to string
+
+```c
+int	**ipp;
+int	i;
+
+i = 0;
+ipp = (int **)malloc(row * sizeof(int*));
+
+while(i < row)
+{
+	ipp[i] = (int *)malloc(col * sizeof(int));
+	// fill it with ipp[i][0 - col]
+	i ++;
+}
+```
+
+
+frustrated making the ft_split,
+
+
+
+function called in the parameter
+##  pass a function as a parameter in C
+https://jraleman.medium.com/c-programming-language-passing-a-function-as-a-parameter-90d52fe842ea
+
+https://www.w3resource.com/c-programming-exercises/c-snippets/how-do-you-pass-a-function-as-a-parameter-in-c.php
+
+https://stackoverflow.com/questions/9410/how-do-you-pass-a-function-as-a-parameter-in-c
+
+
+https://stackoverflow.com/questions/9410/how-do-you-pass-a-function-as-a-parameter-in-c#9413
+
+https://math.hws.edu/bridgeman/courses/331/f05/handouts/c-c++-notes.html
+
+ざんえん　です , i didnt understood anything about that ! 😢
+
+
+
+It’s recommended to create functions that can work with a variety of parameter types. You can do this by declaring the parameter to by of type void *, and then casting the appropriate type in the function body, i.e.: void (*f)(int)
+
+
+
+In C language, it is possible to pass a function as a parameter to another function using function pointers.
+
+
+what i did understood
+
+```c
+// here is a function
+int	add(a, b)
+{
+	return a + b;
+}
+
+void	print()
+{
+	printf("something\n");
+}
+
+void	myfunction(int x, void (*f)(int , int))
+{
+	printf("%d\n" , f(x, x));
+}
+// this function is like
+// void	myfunction(int x, function)
+
+
+// so function is an internal function define in the argument , so the function should have a prototype and argument to pass in
+
+// assume it
+void	function(int value, int another_value)
+
+// just like that
+
+
+int	main()
+{
+	myfunction(4, add)
+}
+```
+
+the casting is not working as i expected
+
+
+also it worked like that
+```c
+void	myfunction(int x, int (f)(int , int))
+{
+	printf("%d\n" , f(x, x));
+}
+```
+
+
+
+```c
+
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	size_t	i;
+
+	i = 0;
+	if (!s)
+		return ;
+	while (*s != '\0')
+	{
+		f(i , s);
+		s ++;
+		i ++;
+	}
+}
+```
+
+idk about this shi
+it is the same , in f you can use the i and the s together in s[i] = ....
+it is not a pointer or const value , it is an array you can modify .
+also how could i guess that i have to walk through characters using the first index of the pointer *s , s ++
+
+
+
+
+## file descriptor
+https://www.youtube.com/watch?v=btT4HDKNIOw
+https://www.youtube.com/watch?v=crd2hgzBVTo
+https://www.youtube.com/watch?v=saMebwRO-Q8 // she talks alot
+https://www.youtube.com/watch?v=rW_NV6rf0rM
+https://www.youtube.com/watch?v=KM5sRWAYqaw
+
+
+
+
+0 -- > stdout
+1 -- > stdint
+2 -- > stderr
+3
+.
+.
+.
+is others file descriptors
+
+my question is , can i use the write function on not fd = 1 ?
+
+## struct
+```c
+struct Car
+{
+	int		num;
+	int		model;
+	char	name[10];
+}
+```
+https://www.youtube.com/watch?v=dqa0KMSMx2w
+
+
+## typedef
+
+
+```c
+typedef struct
+{
+	int		num;
+	int		model;
+	char	name[10];
+}Car;
+```
+
+#### memcpy in struct
+```c
+Car c1;
+Car c2;
+
+c2 = c1;
+```
+
+
+
+
+#### pointer in struct
+
+```c
+typedef struct
+{
+	int *ptr;
+}Data;
+
+int main()
+{
+	Data x;
+
+	x.ptr = malloc(sizeof(int) * 4);
+	x.ptr[0] = 1;
+	x.ptr[1] = 2;
+	x.ptr[2] = 3;
+	x.ptr[3] = 4;
+}
+
+// this is so wrong
+x = y;
+```
+
+
+
+instead of (*ptr).data
+
+ptr->member is 100% identical to (*ptr).member.
+
+
+
+```c
+	while (ptr -> next)
+	{
+		printf("%d\n" , *(int *)(ptr -> data));
+		ptr = ptr -> next;
+		// so , -> is the same as (*ptr).next
+	}
+```
+
+why ? why it works ?
+the ptr is a pointer from that type of datatype , it is a struct pointer
+
+a pointer have two operations
+1. reference ptr = &a , ptr = something 
+2. dereference *ptr
+
+in the way before , adding so much parentheses because the priority , when the compiler sees "." before the dereference , so it goes wrong a little
+
+
+if the current node is the last , so it store null
+ptr -> next != NULL
+
+
+https://gemini.google.com/app/cb78ec25b16200ad
+
+
+
+i like the way while im reserving nodes and somethings
+dont forget to free the node after using it
+
+front mean head
+so new node will be on the first not on the last , walking through the list is waste of time
+
+
+```c
+// printf("hellow");
+	// printf("%d\n" , (*(int *)(*ptr).content));
+	// printf("%p\n" , (*ptr).next);
+
+	// printf("%p\n" , (*ptr).next);
+	// printf("second node , second value : %d\n" , ((int *)(ptr->next)->content)[1]);
+}
+```
+
+
+## add to the front of the linked list
+
+
+
+
+
+// How the delete function works ?
+
+// how to edit on the content of the list
+
+
+
+// how to copy linkedlist

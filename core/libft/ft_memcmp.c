@@ -6,7 +6,7 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/01 17:56:48 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/10/01 18:23:48 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/10/11 13:27:51 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 
 }
 
-int	main()
-{
-	char	*s1 = "1soethin";
-	char	*s2 = "omething";
-	printf("%d\n" , ft_memcmp(s1, s2, 0));
-	printf("%d\n" , memcmp(s1, s2, 0));
-}
+// int	main()
+// {
+// 	char	*s1 = "1soethin";
+// 	char	*s2 = "omething";
+// 	printf("%d\n" , ft_memcmp(s1, s2, 0));
+// 	printf("%d\n" , memcmp(s1, s2, 0));
+// }
 

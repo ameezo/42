@@ -6,7 +6,7 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/09 11:49:52 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/10/09 14:17:36 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/10/11 13:57:14 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,7 @@
 #include <stdlib.h>
 
 
-unsigned int	ft_strlen(char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i ++;
-	return i;
-}
+#include "libft.h"
 
 
 

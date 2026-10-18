@@ -6,19 +6,19 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 14:07:16 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/09/29 14:35:48 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/10/11 19:06:04 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <bsd/string.h>
+// #include <bsd/string.h>
 
 
 unsigned int	ft_strlcat(char *dest, const char *src, unsigned int size)
 {
-	int	i;
-	int	j;
-	int	l;
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	l;
 
 	j = 0;
 	i = 0;

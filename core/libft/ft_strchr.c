@@ -6,7 +6,7 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 15:08:26 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/09/30 16:21:20 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/10/11 13:28:05 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ char	*ft_strchr(const char *s, int c)
 
 
 
-int main()
-{
-	char	*str = "sosmethsirnrg";
-	printf("%s\n" , ft_strchr(str, 'r'));
-	printf("%s\n" , strchr(str, 'r'));
-}
+// int main()
+// {
+// 	char	*str = "sosmethsirnrg";
+// 	printf("%s\n" , ft_strchr(str, 'r'));
+// 	printf("%s\n" , strchr(str, 'r'));
+// }

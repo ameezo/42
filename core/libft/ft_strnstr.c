@@ -6,11 +6,11 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/01 18:24:33 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/10/04 17:27:50 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/10/11 13:39:28 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <bsd/string.h>
+// #include <bsd/string.h>
 #include <stdio.h>
 // len here is the len of character to search , in the big string
 // 		unless it reaches the end of the len or the null of haystack
@@ -58,15 +58,15 @@ int	get_len(char *str)
 	return i;
 }
 
-int	main()
-{
-	char	*haystack = "123s4ome4123some1231234";
-	int	len = get_len(haystack);
-	printf("%d\n",len);
-	char	*needle = "1234";
-	printf("%s\n" , ft_strnstr(haystack , needle, len - 4));
-	printf("%s\n" , strnstr(haystack , needle, len - 4));
-}
+// int	main()
+// {
+// 	char	*haystack = "123s4ome4123some1231234";
+// 	int	len = get_len(haystack);
+// 	printf("%d\n",len);
+// 	char	*needle = "1234";
+// 	printf("%s\n" , ft_strnstr(haystack , needle, len - 4));
+// 	printf("%s\n" , strnstr(haystack , needle, len - 4));
+// }
 
 
 // test cases
