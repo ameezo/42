@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-
+#include "libft.h"
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	if (n == 0)
@@ -24,9 +22,6 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (*s1 - *s2);
 }
-
-
-// # test it in the workstation
 // int	main()
 // {
 // 	char	*s1 = "some";

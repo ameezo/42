@@ -6,7 +6,7 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 14:12:44 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/10/12 21:45:56 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/10/18 17:20:32 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return ptr;
 }
 
-int	main()
+/*int	main()
 {
   char  *s;
   char  *set;
@@ -59,4 +59,4 @@ int	main()
   ptr = ft_strtrim(s , set);
   printf("%s\n" , ptr);
   free(ptr);
-}
+}*/

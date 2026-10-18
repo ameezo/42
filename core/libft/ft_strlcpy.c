@@ -10,9 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-// #include <bsd/string.h>
-#include <stdio.h>
 unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
 {
 	unsigned int	i;
@@ -25,11 +22,7 @@ unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
 	}
 	dest[i] = '\0';
 	return i;
-
-	// you have to be edited as same as strlcat with the vulnerable things
 }
-
-
 // int	main()
 // {
 // 	char	src[10] = "hellow";
@@ -38,6 +31,4 @@ unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
 // 	// printf("%zu\n" , strlcpy(dest, src, 3));
 // 	printf("%d\n" , ft_strlcpy(dest, src, 3));
 // 	printf("%s\n" , dest);
-
-
 // }

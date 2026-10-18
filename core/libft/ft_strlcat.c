@@ -10,10 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-// #include <bsd/string.h>
-
-
 unsigned int	ft_strlcat(char *dest, const char *src, unsigned int size)
 {
 	unsigned int	i;
@@ -35,11 +31,8 @@ unsigned int	ft_strlcat(char *dest, const char *src, unsigned int size)
 		j ++;
 	}
 	dest[i] = '\0';
-
 	return l;
 }
-
-
 // int main()
 // {
 // 	char	src[15] = "123456789";

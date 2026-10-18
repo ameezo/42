@@ -10,10 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-
-
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*ptr;
@@ -27,17 +23,9 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return ptr;
 }
-
-
-
-// // test it in the workstation
-
-
-// int	main()
-// {
-// 	char	str[50] = "somethingingi";
-// 	// printf("%s\n" , strrchr(str, 's'));
-// 	// printf("the return value : %s\n" , fun(str));
-
-// 	printf("%s\n" , ft_strrchr(str, 'i'));
-// }
+/*int	main()
+{
+	char	str[50] = "somethingingi";
+	printf("%s\n" , strrchr(str, '0'));
+	printf("%s\n" , ft_strrchr(str, '0'));
+}*/

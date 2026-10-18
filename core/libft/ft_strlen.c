@@ -6,13 +6,13 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 16:25:01 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/09/23 09:39:24 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/10/18 16:41:16 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 unsigned int	ft_strlen(char *s)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (s[i] != '\0')

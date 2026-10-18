@@ -10,9 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <stdio.h>
 #include <string.h>
+#include <stdio.h>
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -26,20 +25,13 @@ char	*ft_strchr(const char *s, int c)
 			ptr = (char *)s;
 			return ptr;
 		}
-
-			// return s; // wrong
 		s ++;
 	}
 	return 0;
 }
-
-// test it in the workstation
-
-
-
-// int main()
-// {
-// 	char	*str = "sosmethsirnrg";
-// 	printf("%s\n" , ft_strchr(str, 'r'));
-// 	printf("%s\n" , strchr(str, 'r'));
-// }
+/*int main()
+{
+	char	*str = "sosmethsirnrg";
+	printf("%s\n" , ft_strchr(str, 'r'));
+	printf("%s\n" , strchr(str, 'r'));
+}*/

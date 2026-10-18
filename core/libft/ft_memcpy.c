@@ -10,10 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <string.h>
-#include <stdio.h>
-
+#include "libft.h"
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	char	*d;
@@ -30,7 +27,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return dest;
 }
-
 // int	main()
 // {
 // 	char	arr[10] = "12345";

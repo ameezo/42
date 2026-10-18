@@ -6,12 +6,11 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 09:43:48 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/10/11 19:06:39 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/10/18 16:56:34 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <strings.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -26,38 +25,3 @@ void	ft_bzero(void *s, size_t n)
 		i ++;
 	}
 }
-
-// int	main()
-// {
-// 	char	arr[10] = "someth";
-// 	char	arr2[10] = "someth";
-// 	char	*ptr;
-// 	char	*ptr2;
-
-// 	ptr = arr;
-// 	ptr ++;
-
-// 	ptr2 = arr2;
-// 	ptr2 ++;
-
-// 	// printf("oo  v%s\n" , ptr);
-// 	printf("%s\n" , arr);
-
-// 	ft_bzero(ptr , 2);
-// 	bzero(ptr2, 2);
-
-// 	int	i;
-
-// 	i = 0;
-// 	while (i < 10)
-// 	{
-// 		if (arr[i] == '\0')
-// 		{
-// 			printf("i found null on %d\n" , i);
-// 		}
-// 		i ++;
-// 	}
-
-// 	// printf("%c\n" , arr[2]);
-// 	// printf("%c\n" , arr2[2]);
-// }
