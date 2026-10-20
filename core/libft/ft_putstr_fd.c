@@ -23,11 +23,9 @@ void	ft_putstr_fd(char *s, int fd)
 		i ++;
 	}
 }
-
 // int	main()
 // {
 // 	char	*ptr;
 // 	ptr = "something";
 // 	ft_putstr_fd(ptr, 1);
-
 // }

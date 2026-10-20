@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/12 14:12:44 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/10/18 17:20:32 by aal-bann         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   ft_strtrim.c                                      :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: aal-bann <aal-bann@student.42amman.com>   #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/12 14:12:44 by aal-bann         #+#    #+#              */
+/*   Updated: 2026/10/20 15:43:07 by aal-bann        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-int is_in_set(char c, char const *set)
+int	is_in_set(char c, char const *set)
 {
 	int	i;
 
 	i = 0;
-    while (set[i])
-    {
-        if (set[i] == c)
-            return (1);
-        i ++;
-    }
-    return (0);
+	while (set[i] != '\0')
+	{
+		if (set[i] == c)
+			return (1);
+		i++;
+	}
+	return (0);
 }
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*ptr;
@@ -33,15 +33,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 
 	start = 0;
-	end = ft_strlen((char *)s1) - 1;
+	end = ft_strlen((char *) s1) - 1;
 	if (set == NULL || s1 == NULL)
-		return NULL;
-	while (s1[start] != '\0' && is_in_set(s1[start] , set))
-		start ++;
-	while (end > start && is_in_set(s1[end] , set))
-		end --;
+		return (NULL);
+	while (s1[start] != '\0' && is_in_set(s1[start], set))
+		start++;
+	while (end > start && is_in_set(s1[end], set))
+		end--;
 	ptr = ft_substr(s1, start, (end - start + 1));
-	return ptr;
+	return (ptr);
 }
 // int	main()
 // {

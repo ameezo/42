@@ -10,12 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {
-	// "123" -- > 123
 	int	i;
 	int	num;
 	int	minus;
@@ -23,8 +21,6 @@ int	ft_atoi(const char *nptr)
 	i = 0;
 	minus = 0;
 	num = 0;
-	// end the spaces and tabs and others ...
-	// while ()
 	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == ' ')
 		i ++;
 	if (nptr[i] == '-')
@@ -34,20 +30,19 @@ int	ft_atoi(const char *nptr)
 	}
 	else if (nptr[i] == '+')
 		i ++;
-
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		num = num * 10 + (nptr[i] - 48);
+		num = num * 10 - (nptr[i] - 48);
 		i ++;
 	}
 	if (minus)
-		return -num;
-	return num;
+		return (num);
+	return (-num);
 }
 // int	main()
 // {
 // 	char	*ptr;
-// 	ptr = " \n\t	2147483647";
+// 	ptr = " \n\t	-2147483648";
 // 	// ptr = "+123";
 // 	printf("%d\n" , atoi(ptr));
 // 	printf("%d\n" , ft_atoi(ptr));

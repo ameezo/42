@@ -6,13 +6,13 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 12:38:55 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/09/21 12:38:59 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/10/20 15:13:35 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(char c)
+int	ft_isalpha(char c)
 {
 	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return 1;
-	return 0;
+		return (1);
+	return (0);
 }

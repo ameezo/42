@@ -6,15 +6,11 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 09:22:17 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/10/14 13:42:26 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/10/20 15:12:54 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//  convert from int to string
-// 1028 -- > "1028"
-// use malloc
 #include "libft.h"
-
 
 int	digit_count(int n)
 {
@@ -24,13 +20,13 @@ int	digit_count(int n)
 	if (n < 0)
 		len ++;
 	else if (n == 0)
-		return 0;
+		return (1);
 	while (n)
 	{
 		len ++;
 		n = n / 10;
 	}
-	return len;
+	return (len);
 }
 
 void	fill(char *ptr, int n, int len)
@@ -47,33 +43,31 @@ void	fill(char *ptr, int n, int len)
 		len --;
 	}
 }
+
 char	*ft_itoa(int n)
 {
-	// a way to count the n digits
-	int	len;
+	int		len;
 	char	*ptr;
 
-	len = digit_count(n); // 2 + 1 to the minus sign
+	len = digit_count(n);
 	ptr = (char *)malloc(sizeof(char) * (len + 1));
 	if (ptr == NULL)
-		return ptr;
+		return (ptr);
 	if (n < 0)
 		ptr[0] = '-';
 	if (n == 0)
 	{
-		ptr[len] = '0';
-		return ptr;
+		ptr[0] = '0';
+		ptr[1] = '\0';
+		return (ptr);
 	}
 	fill(ptr, n, len);
-	return ptr;
+	return (ptr);
 }
-
 // int	main()
 // {
 // 	char	*ptr;
-
 // 	int	n;
-
 // 	n = 111;
 // 	ptr = ft_itoa(n);
 // 	printf("%s\n" , ptr);

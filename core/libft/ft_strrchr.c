@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/30 14:44:53 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/10/11 13:28:28 by aal-bann         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   ft_strrchr.c                                      :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: aal-bann <aal-bann@student.42amman.com>   #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/09/30 14:44:53 by aal-bann         #+#    #+#              */
+/*   Updated: 2026/10/20 15:43:54 by aal-bann        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 char	*ft_strrchr(const char *s, int c)
 {
 	unsigned char	*ptr;
@@ -21,17 +22,17 @@ char	*ft_strrchr(const char *s, int c)
 	while (*s != '\0')
 	{
 		if (*s == cc)
-			ptr = ((unsigned char *)s);
-		s ++;
+			ptr = ((unsigned char *) s);
+		s++;
 	}
 	if (*s == cc)
 	{
-
-		ptr = (unsigned char *)s;
-		return (char *)ptr;
-	} else if (ptr)
-		return (char *)ptr;
-	return NULL;
+		ptr = (unsigned char *) s;
+		return ((char *) ptr);
+	}
+	else if (ptr)
+		return ((char *) ptr);
+	return (NULL);
 }
 // int	main()
 // {

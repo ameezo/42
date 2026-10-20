@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/14 18:18:43 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/10/14 19:35:28 by aal-bann         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   ft_striteri.c                                     :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: aal-bann <aal-bann@student.42amman.com>   #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/14 18:18:43 by aal-bann         #+#    #+#              */
+/*   Updated: 2026/10/20 16:13:23 by aal-bann        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	size_t	i;
 
@@ -20,12 +21,11 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		return ;
 	while (*s != '\0')
 	{
-		f(i , s);
-		s ++;
-		i ++;
+		f(i, s);
+		s++;
+		i++;
 	}
 }
-
 
 // void	iter(unsigned int i, char * s) {
 // 	// printf("im in\n");
@@ -33,7 +33,6 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 // 	printf("%s\n" , s);
 // 	*s += i;
 // }
-
 
 // int	main()
 // {
