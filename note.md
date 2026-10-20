@@ -713,3 +713,9 @@ so new node will be on the first not on the last , walking through the list is w
 
 
 // how to copy linkedlist
+
+
+
+
+in memcmp ,or mem something , we do not compare with != '\0'
+because there is a lot of null or 0 character value

@@ -10,54 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
 
+#include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*ptr;
-	int	i;
+	unsigned char	*ptr;
 	size_t	heap_size;
 
-
-	if (nmemb != 0 && size > (size_t)-1 / nmemb)
-		return (NULL);
+	if (nmemb != 0 && size > SIZE_MAX / nmemb)
+			return (NULL);
 	heap_size = nmemb * size;
-	i = 0;
-	ptr = malloc(nmemb * size);
+	ptr = (unsigned char *)malloc(heap_size);
 	if (ptr == NULL)
-		return (ptr);
-	while (heap_size--)
-	{
-		((char *)ptr)[i] = '\0';
-		i ++;
-	}
-	return ptr;
+		return ptr;
+	ft_bzero(ptr, heap_size);
+	return (void *)ptr;
 }
-
-// int	main()
-// {
-// 	char	*ptr;
-
-// 	ptr = ft_calloc(0, sizeof(char));
-// 	int n = 4;
-// 	while (*ptr == 0 && n--)
-// 	{
-// 		printf("this is null\n");
-// 		if (n != 0)
-// 			ptr ++;
-// 	}
-
-// 	printf("%s\n" , ptr);
-
-// 	// int	*ptr;
-// 	// ptr = ft_calloc(4, sizeof(int));
-
-// 	// printf("%d\n" , *(ptr));
-// 	// printf("%d\n" , *(ptr + 1));
-// 	// printf("%d\n" , *(ptr + 2));
-// 	// printf("%d\n" , *(ptr + 3));
-
-// 	free(ptr - 3);
-// }

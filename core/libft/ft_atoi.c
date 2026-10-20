@@ -11,58 +11,44 @@
 /* ************************************************************************** */
 
 
-#include <stdio.h>
-#include <stdlib.h>
-
-
 #include "libft.h"
-
-unsigned int	ftstrlen(char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0' && (s[i] >= 48 && s[i] <= 57))
-		i ++;
-	return i;
-}
 
 int	ft_atoi(const char *nptr)
 {
-	// check for atoi again and again
+	// "123" -- > 123
 	int	i;
-	int	len;
-	int	big;
+	int	num;
 	int	minus;
 
 	i = 0;
-	len = 0;
-	big = 1;
 	minus = 0;
-	if (*nptr == '-')
+	num = 0;
+	// end the spaces and tabs and others ...
+	// while ()
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == ' ')
+		i ++;
+	if (nptr[i] == '-')
 	{
-		minus ++;
-		nptr ++;
+		minus = 1;
+		i ++;
 	}
-	len = ftstrlen((char *)nptr) - 1;
-	while (len--)
-		big = big * 10;
-	while (*nptr != '\0')
+	else if (nptr[i] == '+')
+		i ++;
+
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		// do i have to check if the nptr have non-numbers characters ?
-		i = i + ((*nptr - 48) * big);
-		big = big / 10;
-		nptr ++;
+		num = num * 10 + (nptr[i] - 48);
+		i ++;
 	}
 	if (minus)
-		return -i;
-	return i;
+		return -num;
+	return num;
 }
-
 // int	main()
 // {
 // 	char	*ptr;
-// 	ptr = "-00782t904";
+// 	ptr = " \n\t	2147483647";
+// 	// ptr = "+123";
 // 	printf("%d\n" , atoi(ptr));
 // 	printf("%d\n" , ft_atoi(ptr));
 // }

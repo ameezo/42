@@ -18,7 +18,6 @@ int is_in_set(char c, char const *set)
 	int	i;
 
 	i = 0;
-
     while (set[i])
     {
         if (set[i] == c)
@@ -27,7 +26,6 @@ int is_in_set(char c, char const *set)
     }
     return (0);
 }
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*ptr;
@@ -35,28 +33,26 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 
 	start = 0;
-	end = ft_strlen((char *)s1)-1;
-	while (is_in_set(s1[start] , set))
+	end = ft_strlen((char *)s1) - 1;
+	if (set == NULL || s1 == NULL)
+		return NULL;
+	while (s1[start] != '\0' && is_in_set(s1[start] , set))
 		start ++;
-	while (is_in_set(s1[end] , set))
+	while (end > start && is_in_set(s1[end] , set))
 		end --;
-
-	ptr = ft_substr(s1, start, (end - start));
+	ptr = ft_substr(s1, start, (end - start + 1));
 	return ptr;
 }
+// int	main()
+// {
+//   char  *s;
+//   char  *set;
+//   s = "   xxxtripouille";
+//   set = " x";
 
-/*int	main()
-{
-  char  *s;
-  char  *set;
-  s = "tripouilleaaxxx";
-  set = "aax";
-
-  // printf("%s\n" , ft_strtrim(s, set));
-
-
-  char	*ptr;
-  ptr = ft_strtrim(s , set);
-  printf("%s\n" , ptr);
-  free(ptr);
-}*/
+//   // printf("%s\n" , ft_strtrim(s, set));
+//   char	*ptr;
+//   ptr = ft_strtrim(s , set);
+//   printf("%s\n" , ptr);
+//   free(ptr);
+// }

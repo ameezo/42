@@ -10,22 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*ptr;
+	unsigned char	*ptr;
+	unsigned char	cc;
 
-	ptr = 0;
+	ptr = NULL;
+	cc = c;
 	while (*s != '\0')
 	{
-		if (*s == c)
-			ptr = ((char *)s);
+		if (*s == cc)
+			ptr = ((unsigned char *)s);
 		s ++;
 	}
-	return ptr;
+	if (*s == cc)
+	{
+
+		ptr = (unsigned char *)s;
+		return (char *)ptr;
+	} else if (ptr)
+		return (char *)ptr;
+	return NULL;
 }
-/*int	main()
-{
-	char	str[50] = "somethingingi";
-	printf("%s\n" , strrchr(str, '0'));
-	printf("%s\n" , ft_strrchr(str, '0'));
-}*/
+// int	main()
+// {
+// 	char	str[50] = "tripouille";
+// 	printf("%s\n" , strrchr(str, 't'));
+// 	printf("%s\n" , ft_strrchr(str, 't'));
+// }

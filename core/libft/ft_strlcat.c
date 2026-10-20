@@ -10,29 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 unsigned int	ft_strlcat(char *dest, const char *src, unsigned int size)
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	l;
+	size_t	dest_len;
+	size_t	src_len;
+	size_t	i;
 
-	j = 0;
+	src_len = ft_strlen((char *)src);
+	dest_len = 0;
 	i = 0;
-	l = 0;
-	while (dest[i] != '\0')
-		i ++;
-	while (src[l] != '\0')
-		l ++;
-	l = l + i;
-	while ((i < size - 1 ) && src[j] != '\0')
+	while (dest[dest_len] != '\0' && dest_len < size)
+		dest_len ++;
+	if (dest_len >= size)
+		return src_len + size; // because the dest is null
+	while (src[i] != '\0' && (dest_len + 1) < size)
 	{
-		dest[i] = src[j];
+		dest[dest_len] = src[i];
 		i ++;
-		j ++;
+		dest_len ++;
 	}
-	dest[i] = '\0';
-	return l;
+	dest[dest_len] = '\0';
+	return ((dest_len - i) + src_len);
 }
+// size here is the size of dest
+// as same as strlcpy
 // int main()
 // {
 // 	char	src[15] = "123456789";

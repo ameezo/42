@@ -11,64 +11,50 @@
 /* ************************************************************************** */
 
 // #include <bsd/string.h>
-#include <stdio.h>
 // len here is the len of character to search , in the big string
 // 		unless it reaches the end of the len or the null of haystack
+#include "libft.h"
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
+	size_t	tmp;
 
 	j = 0;
 	i = 0;
+	tmp = i;
 	if (*little == '\0')
 		return (char *)big;
-	while (big[i] != '\0' && len)
+	while (big[i] != '\0' && i < len)
 	{
 		if (big[i] == little[j])
 		{
-			while (big[i] == little[j] && len--)
+			tmp = i;
+			while (big[i] == little[j] && i < len)
 			{
 				i ++;
 				j ++;
-				// len --;
 				if (little[j] == '\0')
 					return ((char *)(big + (i - j)));
 			}
+			i = tmp + 1;
 			j = 0;
 		}else
-		{
 			i ++;
-			len --;
-		}
 	}
 	return 0;
 }
 // locate needle in haystack
-
-int	get_len(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i ++;
-	}
-	return i;
-}
-
+// #include <stdio.h>
 // int	main()
 // {
-// 	char	*haystack = "123s4ome4123some1231234";
-// 	int	len = get_len(haystack);
-// 	printf("%d\n",len);
-// 	char	*needle = "1234";
-// 	printf("%s\n" , ft_strnstr(haystack , needle, len - 4));
-// 	printf("%s\n" , strnstr(haystack , needle, len - 4));
+// 	char	*haystack = "helpello world";
+// 	// int	len = get_len(haystack);
+// 	// printf("%d\n",len);
+// 	char	*needle = "ello";
+// 	printf("%s\n" , ft_strnstr(haystack , needle, -1));
+// 	printf("%s\n" , strnstr(haystack , needle, -1));
 // }
-
-
 // test cases
 // if the len is zero
 // if the haystack is less a little

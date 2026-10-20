@@ -10,26 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 // something t 10
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	// what is that the character from c is coming as nigative value ?
 	unsigned char	*ptr;
+	unsigned char	cc;
+	size_t i;
 
-	// printf("%c\n" , ss);
-
+	i = 0;
+	cc = (unsigned char)c;
 	ptr = (unsigned char *)s;
-	while (--n && (*ptr != '\0'))
+	while (i < n)
 	{
-		if (*ptr == c)
-			return ptr;
+		if (*ptr == cc)
+			return (void *)ptr;
 		ptr ++;
-		if (c == '\0' && *ptr == '\0')
-			return ptr;
+		i ++;
 	}
 	return 0;
 }
