@@ -6,7 +6,7 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/15 09:55:09 by aal-bann         #+#    #+#              */
-/*   Updated: 2026/10/20 15:08:57 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/10/20 16:22:46 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <unistd.h>
 #include <stddef.h>
 #include <stdint.h>
+#include <stdlib.h>
 
 typedef struct s_list
 {

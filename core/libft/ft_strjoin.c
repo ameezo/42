@@ -6,7 +6,7 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/11 23:23:22 by aal-bann         #+#    #+#              */
-/*   Updated: 2026/10/20 16:12:57 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/10/20 16:25:23 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	ptr = (char *) malloc(sizeof(char) * (ft_strlen((char *) s1)
-				+ft_strlen((char *) s2)) + 1));
+				+ft_strlen((char *) s2)) + 1);
 	if (ptr == NULL)
 		return (ptr);
 	filler(ptr, s1, i);

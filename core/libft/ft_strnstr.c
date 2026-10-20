@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_strnstr.c                                      :+:      :+:    :+:    */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                   +:+ +:+         +:+      */
 /*   By: aal-bann <aal-bann@student.42amman.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/01 18:24:33 by aal-bann         #+#    #+#              */
-/*   Updated: 2026/10/20 16:05:10 by aal-bann        ###   ########.fr        */
+/*   Updated: 2026/10/20 16:25:02 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,23 +26,23 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	zero_array(arr);
 	if (*little == '\0')
 		return ((char *) big);
-	while (big[i] != '\0' && i < len)
+	while (big[arr[0]] != '\0' && arr[0] < len)
 	{
-		if (big[i] == little[j])
+		if (big[arr[0]] == little[arr[1]])
 		{
-			tmp = i;
-			while (big[i] == little[j] && i < len)
+			tmp = arr[0];
+			while (big[arr[0]] == little[arr[1]] && arr[0] < len)
 			{
-				i++;
-				j++;
-				if (little[j] == '\0')
-					return ((char *)(big + (i - j)));
+				arr[0]++;
+				arr[1]++;
+				if (little[arr[1]] == '\0')
+					return ((char *)(big + (arr[0] - arr[1])));
 			}
-			i = tmp + 1;
-			j = 0;
+			arr[0] = tmp + 1;
+			arr[1] = 0;
 		}
 		else
-			i++;
+			arr[0]++;
 	}
 	return (0);
 }
