@@ -23,10 +23,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	string_len = ft_strlen((char *)s);
 	i = 0;
 	if (start > string_len)
-		return (calloc(1 , 1));
+		return (ft_calloc(1 , 1));
 	if (len > string_len - start)
 		len = string_len - start;
-	ptr = (char *)calloc(sizeof(char), (len + 1));
+	ptr = (char *)ft_calloc(sizeof(char), (len + 1));
 	if (ptr == NULL)
 		return (ptr);
 	while (s[start] != '\0' && i < len)
