@@ -31,6 +31,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*ptr;
 	int		i;
 
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
 	i = 0;
 	ptr = (char *) malloc(sizeof(char) * (ft_strlen((char *) s1)
 				+ft_strlen((char *) s2)) + 1);

@@ -32,10 +32,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	start;
 	size_t	end;
 
-	start = 0;
-	end = ft_strlen((char *) s1) - 1;
 	if (set == NULL || s1 == NULL)
 		return (NULL);
+	if (ft_strlen(s1) == 0)
+		return (ft_calloc(1, 1));
+	start = 0;
+	end = ft_strlen((char *) s1) - 1;
 	while (s1[start] != '\0' && is_in_set(s1[start], set))
 		start++;
 	while (end > start && is_in_set(s1[end], set))

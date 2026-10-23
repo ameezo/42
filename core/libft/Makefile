@@ -14,9 +14,10 @@ SRC=ft_atoi.c ft_itoa.c ft_lstnew.c ft_putendl_fd.c ft_strlcat.c ft_substr.c \
 OBJ=$(SRC:.c=.o)
 
 
-
-
 all: $(NAME)
+
+
+bonus: all
 
 
 $(NAME): $(OBJ)
@@ -34,3 +35,4 @@ fclean:
 clean:
 	rm -f $(OBJ)
 
+.PHONY: all clean fclean re bonus

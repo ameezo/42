@@ -21,6 +21,8 @@ int	how_many_sub(char const *s, char c)
 	i = 0;
 	count = 0;
 	f = 0;
+	if (s == NULL)
+		return (0);
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
@@ -104,6 +106,17 @@ void	free_indexing(int **index, int sub_strings)
 	free(index);
 }
 
+char	**allocator(int sub_count)
+{
+	char	**ptr;
+
+	ptr = (char **) malloc(sizeof(char *) * (sub_count + 1));
+	if (ptr == NULL)
+		return (ptr);
+	ft_bzero(ptr, ((sub_count + 1) * sizeof(char *)));
+	return (ptr);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**ptr;
@@ -111,15 +124,14 @@ char	**ft_split(char const *s, char c)
 	int		sub_count;
 	int		i;
 
+	if (s == NULL)
+		return (NULL);
 	i = 0;
 	sub_count = how_many_sub(s, c);
-	ptr = (char **) malloc(sizeof(char *) * (sub_count + 1));
-	if (ptr == NULL)
-		return (ptr);
-	if (sub_count == 0)
+	ptr = allocator(sub_count);
+	if (ptr == NULL || sub_count == 0)
 		return (ptr);
 	index = (int **) malloc(sizeof(int *) * (sub_count));
-	ft_bzero(ptr, sub_count + 1);
 	while (i < sub_count)
 	{
 		index[i] = malloc(sizeof(int) * 2);
