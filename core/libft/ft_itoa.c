@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	digit_count(int n)
+static int	digit_count(int n)
 {
 	int	len;
 
@@ -29,7 +29,7 @@ int	digit_count(int n)
 	return (len);
 }
 
-void	fill(char *ptr, int n, int len)
+static void	fill(char *ptr, int n, int len)
 {
 	ptr[len] = '\0';
 	len --;
@@ -64,12 +64,3 @@ char	*ft_itoa(int n)
 	fill(ptr, n, len);
 	return (ptr);
 }
-// int	main()
-// {
-// 	char	*ptr;
-// 	int	n;
-// 	n = 111;
-// 	ptr = ft_itoa(n);
-// 	printf("%s\n" , ptr);
-// 	free(ptr);
-// }

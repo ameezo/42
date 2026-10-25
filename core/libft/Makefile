@@ -16,10 +16,6 @@ OBJ=$(SRC:.c=.o)
 
 all: $(NAME)
 
-
-bonus: all
-
-
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
@@ -35,4 +31,4 @@ fclean:
 clean:
 	rm -f $(OBJ)
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re

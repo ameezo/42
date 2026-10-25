@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	filler(char *ptr, char const *s, int index)
+static void	filler(char *ptr, char const *s, int index)
 {
 	int	i;
 
@@ -34,12 +34,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
 	i = 0;
-	ptr = (char *) malloc(sizeof(char) * (ft_strlen((char *) s1)
-				+ft_strlen((char *) s2)) + 1);
+	ptr = (char *) malloc(sizeof(char) * (ft_strlen(s1)
+				+ft_strlen(s2)) + 1);
 	if (ptr == NULL)
 		return (ptr);
 	filler(ptr, s1, i);
-	i = i + ft_strlen((char *) s1);
+	i = i + ft_strlen(s1);
 	filler(ptr, s2, i);
 	return (ptr);
 }

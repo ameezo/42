@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	zero_array(size_t arr[])
+static void	zero_array(size_t arr[])
 {
 	arr[0] = 0;
 	arr[1] = 0;

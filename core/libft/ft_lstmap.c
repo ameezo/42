@@ -36,22 +36,3 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (node);
 }
-// int	main()
-// {
-// 	t_list	*node1;
-// 	t_list	*node2;
-// 	t_list	*node3;
-// 	t_list	*node4;
-// 	t_list	*ptr;
-// 	int	arr1[] = {5 , 65};
-// 	int	arr2[] = {56 , 89};
-// 	int	arr3[] = {44 , 11};
-// 	int	arr4[] = {90 , 67};
-// 	node1 = ft_lstnew(arr1);
-// 	node2 = ft_lstnew(arr2);
-// 	node2->next = node3;
-// 	node3 = ft_lstnew(arr3);
-// 	node3->next = node4;
-// 	node1->next = node2;
-// 	ptr = ft_lstmap(node1);
-// }

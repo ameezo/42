@@ -12,12 +12,8 @@
 
 #ifndef LIBFT_H
 #define LIBFT_H
-#include <string.h>
 #include <unistd.h>
-#include <stddef.h>
-#include <stdint.h>
 #include <stdlib.h>
-
 
 typedef struct s_list
 {

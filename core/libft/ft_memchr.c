@@ -30,10 +30,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (0);
 }
-// int	main()
-// {
-// 	char	*str = "something";
-// 	// what if the c = '\0' , what it should return ?
-// 	printf("%s\n" , (char *)ft_memchr(str , '\0' , 10));
-// 	printf("%s\n" , (char *)memchr(str , '\0' , 10));
-// }

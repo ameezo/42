@@ -39,11 +39,3 @@ int	ft_atoi(const char *nptr)
 		return (num);
 	return (-num);
 }
-// int	main()
-// {
-// 	char	*ptr;
-// 	ptr = " \n\t	-2147483648";
-// 	// ptr = "+123";
-// 	printf("%d\n" , atoi(ptr));
-// 	printf("%d\n" , ft_atoi(ptr));
-// }

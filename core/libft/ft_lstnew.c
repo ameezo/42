@@ -23,15 +23,3 @@ t_list	*ft_lstnew(void *content)
 	node1->next = NULL;
 	return (node1);
 }
-// int	main()
-// {
-// 	t_list	*ptr;
-// 	int	a;
-// 	int	*v;
-// 	a = 10;
-// 	v = &a;
-// 	ptr = ft_lstnew(v);
-// 	printf("%d\n", *(int *)(*ptr).content);
-// 	// free(ptr->content);
-// 	free(ptr);
-// }

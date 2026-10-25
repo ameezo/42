@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	number_digit(int n)
+static int	number_digit(int n)
 {
 	int	len;
 
@@ -25,7 +25,7 @@ int	number_digit(int n)
 	return (len);
 }
 
-void	fill_array(char *arr, int len, int n)
+static void	fill_array(char *arr, int len, int n)
 {
 	while (len > 0)
 	{

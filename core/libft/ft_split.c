@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	how_many_sub(char const *s, char c)
+static int	how_many_sub(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -37,7 +37,7 @@ int	how_many_sub(char const *s, char c)
 	return (count);
 }
 
-void	indexing(char const *s, char c, int **index)
+static void	indexing(char const *s, char c, int **index)
 {
 	int	i;
 	int	j;
@@ -64,7 +64,7 @@ void	indexing(char const *s, char c, int **index)
 		index[j][1] = i - 1;
 }
 
-void	fill_it(char const *s, int **index, char **ptr, int sub_count)
+static void	fill_it(char const *s, int **index, char **ptr, int sub_count)
 {
 	int	i;
 	int	start;
@@ -93,7 +93,7 @@ void	fill_it(char const *s, int **index, char **ptr, int sub_count)
 	}
 }
 
-void	free_indexing(int **index, int sub_strings)
+static void	free_indexing(int **index, int sub_strings)
 {
 	int	i;
 
@@ -104,17 +104,6 @@ void	free_indexing(int **index, int sub_strings)
 		i++;
 	}
 	free(index);
-}
-
-char	**allocator(int sub_count)
-{
-	char	**ptr;
-
-	ptr = (char **) malloc(sizeof(char *) * (sub_count + 1));
-	if (ptr == NULL)
-		return (ptr);
-	ft_bzero(ptr, ((sub_count + 1) * sizeof(char *)));
-	return (ptr);
 }
 
 char	**ft_split(char const *s, char c)
@@ -128,14 +117,13 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	i = 0;
 	sub_count = how_many_sub(s, c);
-	ptr = allocator(sub_count);
+	ptr = ft_calloc(sub_count + 1, sizeof(char *));
 	if (ptr == NULL || sub_count == 0)
 		return (ptr);
 	index = (int **) malloc(sizeof(int *) * (sub_count));
 	while (i < sub_count)
 	{
-		index[i] = malloc(sizeof(int) * 2);
-		ft_bzero(index[i], 2);
+		index[i] = ft_calloc(2, sizeof(int));
 		i++;
 	}
 	indexing(s, c, index);
