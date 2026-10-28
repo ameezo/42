@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   ft_split.c                                        :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: aal-bann <aal-bann@student.42amman.com>   #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/12 21:53:34 by aal-bann         #+#    #+#              */
-/*   Updated: 2026/10/20 16:14:40 by aal-bann        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/12 21:53:34 by aal-bann          #+#    #+#             */
+/*   Updated: 2026/10/20 16:14:40 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	how_many_sub(char const *s, char c)
 	return (count);
 }
 
-static void	free_all(char **ptr, int i)
+static void	*free_all(char **ptr, int i)
 {
 	int	j;
 
@@ -45,23 +45,23 @@ static void	free_all(char **ptr, int i)
 	while (j < i)
 	{
 		free(ptr[j]);
-		j ++;
+		j++;
 	}
 	free(ptr);
+	return (NULL);
 }
 
-
-static int	get_len(char const *s, int *index , char c)
+static int	get_len(char const *s, int *index, char c)
 {
 	int	count;
 
 	count = 0;
 	while (s[*index] != '\0' && s[*index] == c)
-		(*index) ++;
+		(*index)++;
 	while (s[*index] != '\0' && s[*index] != c)
 	{
-		count ++;
-		(*index) ++;
+		count++;
+		(*index)++;
 	}
 	return (count);
 }
@@ -73,17 +73,14 @@ static void	fill(char *ptr, const char *s, int index, int len)
 
 	i = index - len;
 	j = 0;
-	// printf("index %d\n" , index);
-	// printf("len : %d\n" , len);
 	while (i < index)
 	{
 		ptr[j] = s[i];
-		i ++;
-		j ++;
+		i++;
+		j++;
 	}
 	ptr[j] = '\0';
 }
-
 
 char	**ft_split(char const *s, char c)
 {
@@ -93,25 +90,21 @@ char	**ft_split(char const *s, char c)
 	int		index;
 	int		len;
 
-	len = 0;
-	i = 0;
-	index = 0;
+	if (!s)
+		return (NULL);
 	sub_count = how_many_sub(s, c);
 	ptr = ft_calloc(sub_count + 1, sizeof(char *));
-	if (ptr == NULL || sub_count == 0)
-		return (ptr);
-	while (i < sub_count)
+	if (!ptr)
+		return (NULL);
+	i = -1;
+	index = 0;
+	while (++i < sub_count)
 	{
-		len = (get_len(s , &index , c) + 1);
-		ptr[i] = malloc(len * sizeof(char));
-		if (ptr[i] == NULL)
-		{
-			free_all(ptr ,i);
-			ptr = NULL;
-			return (NULL); // is that NULL or ptr
-		}
-		fill(ptr[i] , s , index , len - 1);
-		i ++;
+		len = get_len(s, &index, c);
+		ptr[i] = malloc((len + 1) * sizeof(char));
+		if (!ptr[i])
+			return (free_all(ptr, i));
+		fill(ptr[i], s, index, len);
 	}
 	return (ptr);
 }

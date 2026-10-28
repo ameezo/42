@@ -24,6 +24,8 @@ $(NAME): $(OBJ)
 %.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
+bonus: $(NAME)
+
 re: fclean all
 
 fclean:
@@ -32,4 +34,4 @@ fclean:
 clean:
 	rm -f $(OBJ)
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

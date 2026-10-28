@@ -26,12 +26,12 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	zero_array(arr);
 	if (*little == '\0')
 		return ((char *) big);
-	while (big[arr[0]] != '\0' && arr[0] < len)
+	while (arr[0] < len && big[arr[0]] != '\0')
 	{
 		if (big[arr[0]] == little[arr[1]])
 		{
 			tmp = arr[0];
-			while (big[arr[0]] == little[arr[1]] && arr[0] < len)
+			while (arr[0] < len && big[arr[0]] == little[arr[1]])
 			{
 				arr[0]++;
 				arr[1]++;
