@@ -11,3 +11,6 @@
 /* ************************************************************************** */
 
 #include <stdarg.h>
+
+int	to_hex(unsigned long n , char s);
+#include <stdio.h>

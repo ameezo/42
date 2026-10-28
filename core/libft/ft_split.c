@@ -37,116 +37,99 @@ static int	how_many_sub(char const *s, char c)
 	return (count);
 }
 
-static void	indexing(char const *s, char c, int **index)
+static void	free_all(char **ptr, int i)
+{
+	int	j;
+
+	j = 0;
+	while (j < i)
+	{
+		free(ptr[j]);
+		j ++;
+	}
+	free(ptr);
+}
+
+
+static int	get_len(char const *s, int *index , char c)
+{
+	int	count;
+
+	count = 0;
+	while (s[*index] != '\0' && s[*index] == c)
+		(*index) ++;
+	while (s[*index] != '\0' && s[*index] != c)
+	{
+		count ++;
+		(*index) ++;
+	}
+	return (count);
+}
+
+static void	fill(char *ptr, const char *s, int index, int len)
 {
 	int	i;
 	int	j;
-	int	in_word;
 
-	i = -1;
+	i = index - len;
 	j = 0;
-	in_word = 0;
-	while (s[++i] != '\0')
+	// printf("index %d\n" , index);
+	// printf("len : %d\n" , len);
+	while (i < index)
 	{
-		if (s[i] != c && in_word == 0)
-		{
-			in_word = 1;
-			index[j][0] = i;
-		}
-		else if (s[i] == c && in_word == 1)
-		{
-			in_word = 0;
-			index[j][1] = i - 1;
-			j++;
-		}
+		ptr[j] = s[i];
+		i ++;
+		j ++;
 	}
-	if (s[i - 1] != c)
-		index[j][1] = i - 1;
+	ptr[j] = '\0';
 }
 
-static void	fill_it(char const *s, int **index, char **ptr, int sub_count)
-{
-	int	i;
-	int	start;
-	int	end;
-	int	k;
-
-	start = 0;
-	end = 0;
-	i = 0;
-	k = 0;
-	while (sub_count > 0)
-	{
-		start = index[i][0];
-		end = index[i][1];
-		ptr[i] = (char *) malloc(sizeof(char) * (end - start + 1) + 1);
-		k = 0;
-		while (start <= end)
-		{
-			ptr[i][k] = s[start];
-			k++;
-			start++;
-		}
-		ptr[i][k] = '\0';
-		i++;
-		sub_count--;
-	}
-}
-
-static void	free_indexing(int **index, int sub_strings)
-{
-	int	i;
-
-	i = 0;
-	while (i < sub_strings)
-	{
-		free(index[i]);
-		i++;
-	}
-	free(index);
-}
 
 char	**ft_split(char const *s, char c)
 {
 	char	**ptr;
-	int		**index;
 	int		sub_count;
 	int		i;
+	int		index;
+	int		len;
 
-	if (s == NULL)
-		return (NULL);
+	len = 0;
 	i = 0;
+	index = 0;
 	sub_count = how_many_sub(s, c);
 	ptr = ft_calloc(sub_count + 1, sizeof(char *));
 	if (ptr == NULL || sub_count == 0)
 		return (ptr);
-	index = (int **) malloc(sizeof(int *) * (sub_count));
 	while (i < sub_count)
 	{
-		index[i] = ft_calloc(2, sizeof(int));
-		i++;
+		len = (get_len(s , &index , c) + 1);
+		ptr[i] = malloc(len * sizeof(char));
+		if (ptr[i] == NULL)
+		{
+			free_all(ptr ,i);
+			ptr = NULL;
+			return (NULL); // is that NULL or ptr
+		}
+		fill(ptr[i] , s , index , len - 1);
+		i ++;
 	}
-	indexing(s, c, index);
-	fill_it(s, index, ptr, sub_count);
-	free_indexing(index, sub_count);
 	return (ptr);
 }
+
 // int	main()
 // {
-// 	char	*str = "";
-// 	char	**arr = ft_split(str , ' ');
-// 	int	sub = 2;
+// 	char	*str = "Raghad-is-the-best";
+// 	char	**arr = ft_split(str , '-');
 // 	int	i = 0;
-// 	while (i < sub)
+// 	while (arr[i] != NULL)
 // 	{
 // 		printf("%s\n" , arr[i]);
 // 		i ++;
 // 	}
-// 	i = 0;
-// 	while (i < sub)
-// 	{
-// 		free(arr[i]);
-// 		i ++;
-// 	}
-// 	free(arr);
+// 	// while (i > 0)
+// 	// {
+// 	// 	free(arr[i]);
+// 	// 	i ++;
+// 	// }
+// 	// free(arr);
 // }

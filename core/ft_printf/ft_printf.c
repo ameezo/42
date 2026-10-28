@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 #include "../libft/libft.h"
-#include <stdio.h>
+
 #include <stdlib.h>
 int	to_hex(unsigned long n , char s);
 // #include <cstdarg.h>

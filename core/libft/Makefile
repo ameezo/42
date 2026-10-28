@@ -2,6 +2,7 @@ CC=cc
 NAME=libft.a
 CFLAGS=-Wall -Wextra -Werror
 DEPS=libft.h
+AR=ar rcs
 SRC=ft_atoi.c ft_itoa.c ft_lstnew.c ft_putendl_fd.c ft_strlcat.c ft_substr.c \
     ft_bzero.c ft_lstadd_back.c ft_lstsize.c ft_putnbr_fd.c ft_strlcpy.c \
     ft_tolower.c ft_calloc.c ft_lstadd_front.c ft_memchr.c ft_putstr_fd.c \
@@ -17,7 +18,7 @@ OBJ=$(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	$(AR) $(NAME) $(OBJ)
 
 
 %.o: %.c libft.h

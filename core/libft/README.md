@@ -42,3 +42,7 @@ cd 42/core/libft
 
 https://man7.org/linux/man-pages/
 https://jraleman.medium.com/c-programming-language-passing-a-function-as-a-parameter-90d52fe842ea
+
+
+## AI usage
+write about how do i use the ai duing the educational process
