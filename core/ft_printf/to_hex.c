@@ -50,5 +50,6 @@ int	to_hex(unsigned long n , char s)
 
 // int	main()
 // {
-// 	printf("\n%d\n" , to_hex(4138));
+// 	to_hex(16 , 0);
+// 	// printf("asdk" ,to_hex(4138 , 0) );
 // }

@@ -11,6 +11,9 @@
 /* ************************************************************************** */
 
 #include <stdarg.h>
-
+#include "libft/libft.h"
 int	to_hex(unsigned long n , char s);
+int	ft_printf(const char *format, ...);
 #include <stdio.h>
+#include <stdint.h>
+#include <limits.h>

@@ -1,0 +1,54 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                       :::      ::::::::    */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                   +:+ +:+         +:+      */
+/*   By: aal-bann <aal-bann@student.42amman.com>   #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/09/24 10:18:55 by aal-bann         #+#    #+#              */
+/*   Updated: 2026/10/20 16:35:59 by aal-bann         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	unsigned char	*d;
+	unsigned char	*s;
+	size_t			i;
+
+	d = (unsigned char *) dest;
+	s = (unsigned char *) src;
+	i = 0;
+	if (s < d)
+	{
+		while (n > 0)
+		{
+			n--;
+			d[n] = s[n];
+		}
+	}
+	else if (s > d)
+	{
+		while (i < n)
+		{
+			d[i] = s[i];
+			i++;
+		}
+	}
+	return (dest);
+}
+// int	main()
+// {
+// 	char	arr[10] = "ABCDEF";
+// 	char	*src = arr;
+// 	char	*dest = arr + 6;
+// 	char	arr2[10] = "ABCDEF";
+// 	char	*src2 = arr2;
+// 	char	*dest2 = arr2 + 6;
+// 	printf("my fun %s\n" , (char *)ft_memmove(dest , src, 10));
+// 	printf("origin %s\n" , (char *)memmove(dest2, src2, 10));
+// 	printf("%s\n" , arr);
+// 	printf("%s\n" , arr2);
+// }
