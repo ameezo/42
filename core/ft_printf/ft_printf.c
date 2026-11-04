@@ -21,12 +21,98 @@ int	to_hex(unsigned long n , char s);
 // in this function , i should check what percent type is it
 
 
+int	digit_counter(int n)
+{
+	int	count;
+
+	count = 0;
+	while (n != 0)
+	{
+		n = n / 10;
+		count ++;
+	}
+	return (count);
+}
+
+
+
+int	unsingned_digit_counter(unsigned int n)
+{
+	int	count;
+
+	count = 0;
+	while (n != 0)
+	{
+		n = n / 10;
+		count ++;
+	}
+	return (count);
+}
 int	d_persent(va_list *arg)
 {
-	ft_putnbr_fd(va_arg(*arg, int) , 1);
+	int	n;
+	int	sum;
+
+	n = va_arg(*arg, int);
+	sum = digit_counter(n);
+	ft_putnbr_fd(n, 1);
 	// return digits_num() // digits number // a function return how many digits
-	return (1);
+	if (n > 0)
+		return (sum);
+	else if (n < 0)
+		return (sum + 1);
+	else
+		return (1);
+	// return (-1);
 }
+
+
+
+// ---
+// ---
+// put number to put unsingned
+static void	fill_array(char *arr, int len, unsigned int n)
+{
+	while (len > 0)
+	{
+		len--;
+		arr[len] = (n % 10) + 48;
+		n = n / 10;
+	}
+}
+
+void	put_unsigned(unsigned int n, int fd)
+{
+	int		len;
+	char	arr[12];
+
+	len = unsingned_digit_counter(n);
+	// printf("hjjjasd%d\n" , len);
+	ft_bzero(arr, 12);
+	if (n == 0)
+		arr[0] = '0';
+	fill_array(arr, len, n);
+	ft_putstr_fd(arr, fd);
+}
+
+// ---
+// ---
+// put number to put unsingned
+int u_persent(va_list *arg)
+{
+	unsigned int	x;
+	int		count;
+
+	x = va_arg(*arg, unsigned int);
+	count = unsingned_digit_counter(x);
+	// printf("%ld\n" , x % 10000000000);
+	put_unsigned(x , 1);
+	if (count > 0)
+		return (count);
+	else
+		return (1);
+}
+
 
 int	c_persent(va_list *arg)
 {
@@ -57,9 +143,9 @@ int	persent_persent()
 
 int	ptr_persent(va_list *arg)
 {
-	unsigned long	n;
+	unsigned long	n; // is it long long or unsgined long
 
-	n = va_arg(*arg, int);
+	n = va_arg(*arg, long); // is it long long or long
 	// if (n == 0)
 	// {
 	// 	ft_putstr_fd("0x0", 1);
@@ -81,13 +167,12 @@ int	ptr_persent(va_list *arg)
 
 int	x_persent(char s, va_list *arg)
 {
-	// if (s == 'X')
-	// 	return (to_hex(va_*arg(*arg, int) , 0));
-	// else
-	// 	return (to_hex(va_*arg(*arg, int) , 0));
-	return (to_hex(va_arg(*arg, int) , s));
+	return (to_hex(va_arg(*arg, unsigned int) , s)); // why unsinged int not int ?
 	// return (-1);
 }
+
+
+
 
 int	func(char  s, va_list *arg)
 {
@@ -97,6 +182,8 @@ int	func(char  s, va_list *arg)
 	// also , there is no one check if the error accours here if (va_*args(*args, int) != int) or something
 	if (s == 'd' || s == 'i') // check if i is the same thing as d
 		return (d_persent(arg));
+	else if (s == 'u')
+		return (u_persent(arg));
 	else if (s == 'c')
 		return (c_persent(arg));
 	else if (s == 's')
@@ -148,17 +235,24 @@ int	ft_printf(const char *format, ...)
 	return (l);
 }
 
-int	main()
-{
-	int	x = 0, y = 0;
+// int	main()
+// {
+// 	int	x = 0, y = 0;
 
-	// y = printf(" %p %p ", (void *)LONG_MIN, (void *)LONG_MAX);
-	y = ft_printf(" %p %p ", LONG_MIN, LONG_MAX);
-	printf("\n%d" , y);
-}
+// 	y = ft_printf(" %x ", -1);
+// 	// y =  printf(" %X ", -1);
+// 	printf("\n%d" , y);
+// }
 
+
+// y = printf(" %p ", -1);
+// y = ft_printf(" %p ", -1);
 // 0xffffffffffffffff
 // 0xffffffffffffffff
+//
+//
+// s0xffffffffffffffff
+// s0xffffffffffffffff
 
 
 // print(" NULL %s NULL ", NULL)
