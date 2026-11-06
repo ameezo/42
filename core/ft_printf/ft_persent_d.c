@@ -6,7 +6,7 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 19:44:24 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/11/04 19:44:24 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/11/06 15:18:34 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,10 @@ int	d_persent(va_list *arg)
 	n = va_arg(*arg, int);
 	sum = digit_counter(n);
 	ft_putnbr_fd(n, 1);
-	// return digits_num() // digits number // a function return how many digits
 	if (n > 0)
 		return (sum);
 	else if (n < 0)
 		return (sum + 1);
 	else
 		return (1);
-	// return (-1);
 }
