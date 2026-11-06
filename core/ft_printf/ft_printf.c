@@ -6,7 +6,7 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 12:38:40 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/10/22 12:38:40 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/11/06 15:11:31 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int	ft_printf(const char *format, ...)
 
 	i = 0;
 	l = 0;
+	if (format == NULL)
+		return (-1);
 	while (format[i] != 0)
 	{
 		if (format[i] == '%')
@@ -67,12 +69,13 @@ int	ft_printf(const char *format, ...)
 	return (l);
 }
 
+// #include <stdio.h>
 // int	main()
 // {
-// 	int	x = 0, y = 0;
+// 	int y = 0;
 
-// 	y = ft_printf(" %x ", -1);
-// 	// y =  printf(" %X ", -1);
+// 	y = ft_printf(NULL);
+// 	// y =  printf(NULL);
 // 	printf("\n%d" , y);
 // }
 

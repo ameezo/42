@@ -1,5 +1,5 @@
 CC=cc
-#CFLAGS=-Wall -Wextra -Werror
+CFLAGS=-Wall -Wextra -Werror
 NAME=libftprintf.a
 DEPS=ft_printf.h
 SRC=ft_printf.c to_hex.c libft/ft_atoi.c libft/ft_itoa.c libft/ft_lstnew.c libft/ft_putendl_fd.c \
@@ -22,7 +22,11 @@ $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
 %.o: %.c $(DEPS)
-	$(CC) -c $< -o $@
+	$(CC)  $(CFLAGS) -c $< -o $@
+
+re:
+	make fclean
+	make all
 
 clean:
 	rm -f $(OBJ)

@@ -6,7 +6,7 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 19:46:39 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/11/04 19:46:39 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/11/06 14:43:56 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,11 @@ int	ptr_persent(va_list *arg)
 	// 	ft_putstr_fd("0x0", 1);
 	// 	return (3);
 	// }
-	//
+	if (n == 0)
+	{
+		ft_putstr_fd("(nil)", 1);
+		return (5);
+	}
 	ft_putstr_fd("0x", 1);
 
 	// ft_putstr_fd("0x1", 1);

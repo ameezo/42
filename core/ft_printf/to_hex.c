@@ -6,7 +6,7 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 13:51:48 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/10/25 13:51:48 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/11/06 14:31:48 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@
 // 11 == E
 // 11 == F
 // now , aanything is so easy
-#include "../libft/libft.h"
-#include <stdio.h>
+// #include "../libft/libft.h"
+// #include <stdio.h>
+#include "ft_printf.h"
 // char	*to_hex(int n)
 // so maybe i return the len of character printed so i can print it out
 int	to_hex(unsigned long n , char s)
