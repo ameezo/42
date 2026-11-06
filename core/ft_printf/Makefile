@@ -10,7 +10,8 @@ SRC=ft_printf.c to_hex.c libft/ft_atoi.c libft/ft_itoa.c libft/ft_lstnew.c libft
 	libft/ft_lstdelone.c libft/ft_memcpy.c libft/ft_strchr.c libft/ft_strncmp.c libft/ft_isascii.c \
 	libft/ft_lstiter.c libft/ft_memmove.c libft/ft_strdup.c libft/ft_strnstr.c libft/ft_isdigit.c \
 	libft/ft_lstlast.c libft/ft_memset.c libft/ft_striteri.c libft/ft_strrchr.c libft/ft_isprint.c \
-	libft/ft_lstmap.c libft/ft_putchar_fd.c libft/ft_strjoin.c libft/ft_strtrim.c
+	libft/ft_lstmap.c libft/ft_putchar_fd.c libft/ft_strjoin.c libft/ft_strtrim.c ft_persent_d.c \
+	ft_persent_hex.c ft_persent_string.c ft_persent_u.c
 
 OBJ=$(SRC:%.c=%.o)
 
@@ -27,7 +28,6 @@ clean:
 	rm -f $(OBJ)
 
 fclean:
-	rm -f $(NAME)
-
+	rm -f $(NAME) $(OBJ)
 
 .PHONY: all clean fclean re
