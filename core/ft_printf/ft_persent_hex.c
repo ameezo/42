@@ -12,22 +12,18 @@
 
 #include "ft_printf.h"
 
-int	ptr_persent(va_list *arg)
-{
-	unsigned long	n; // is it long long or unsgined long
+int ptr_persent(va_list *arg) {
+  unsigned long n;
 
-	n = va_arg(*arg, long); // is it long long or long
-	if (n == 0)
-	{
-		ft_putstr_fd("(nil)", 1);
-		return (5);
-	}
-	ft_putstr_fd("0x", 1);
-	return (to_hex(n, 0) + 2);
-	// return (-1); // error , how to handle this setuation
+  n = (unsigned long)va_arg(*arg, long);
+  if (n == 0) {
+    ft_putstr_fd("(nil)", 1);
+    return (5);
+  }
+  ft_putstr_fd("0x", 1);
+  return (to_hex(n, 0) + 2);
 }
 
-int	x_persent(char s, va_list *arg)
-{
-	return (to_hex(va_arg(*arg, unsigned int), s)); // why unsinged int not int ?
+int x_persent(char s, va_list *arg) {
+  return (to_hex(va_arg(*arg, unsigned int), s));
 }
