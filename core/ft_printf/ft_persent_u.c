@@ -41,7 +41,6 @@ void	put_unsigned(unsigned int n, int fd)
 	char	arr[12];
 
 	len = unsingned_digit_counter(n);
-	// printf("hjjjasd%d\n" , len);
 	ft_bzero(arr, 12);
 	if (n == 0)
 		arr[0] = '0';
@@ -49,15 +48,14 @@ void	put_unsigned(unsigned int n, int fd)
 	ft_putstr_fd(arr, fd);
 }
 
-int u_persent(va_list *arg)
+int	u_persent(va_list *arg)
 {
 	unsigned int	x;
-	int		count;
+	int				count;
 
 	x = va_arg(*arg, unsigned int);
 	count = unsingned_digit_counter(x);
-	// printf("%ld\n" , x % 10000000000);
-	put_unsigned(x , 1);
+	put_unsigned(x, 1);
 	if (count > 0)
 		return (count);
 	else

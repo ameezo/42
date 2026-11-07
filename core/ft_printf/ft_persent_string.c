@@ -32,8 +32,7 @@ int	s_persent(va_list *arg)
 	return (ft_strlen(ptr));
 }
 
-
-int	persent_persent()
+int	persent_persent(void)
 {
 	ft_putchar_fd('%', 1);
 	return (1);

@@ -9,21 +9,8 @@
 /*   Updated: 2026/11/06 15:21:04 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// convert this int into hex ....
-// lets begin with
-// 10 == A
-// 11 == B
-// 11 == C
-// 11 == D
-// 11 == E
-// 11 == F
-// now , aanything is so easy
-// #include "../libft/libft.h"
-// #include <stdio.h>
 #include "ft_printf.h"
 
-// should i handle null here ?
 int	to_hex(unsigned long n, char s)
 {
 	char	arr[17];
@@ -41,10 +28,6 @@ int	to_hex(unsigned long n, char s)
 		ft_putchar_fd(arr[n % 16], 1);
 		return (1);
 	}
-	// printf("%d\n" , len);
 	ft_putchar_fd(arr[n % 16], 1);
 	return (len + 1);
 }
-// do the work
-// recursive -- > done
-// return len -- > done
