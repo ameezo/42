@@ -6,11 +6,12 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 12:38:40 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/11/06 15:17:37 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/11/09 17:45:41 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 int	func(char s, va_list *arg)
 {
@@ -19,7 +20,7 @@ int	func(char s, va_list *arg)
 		va_end(*arg);
 		return (-1);
 	}
-	if (s == 'd' || s == 'i')
+	else if (s == 'd' || s == 'i')
 		return (d_persent(arg));
 	else if (s == 'u')
 		return (u_persent(arg));
@@ -33,35 +34,40 @@ int	func(char s, va_list *arg)
 		return (ptr_persent(arg));
 	else if (s == 'x' || s == 'X')
 		return (x_persent(s, arg));
-	else
-		return (0);
+	return (0);
 }
 
 int	ft_printf(const char *format, ...)
 {
-	int		i;
 	int		l;
 	va_list	args;
 
 	va_start(args, format);
-	i = 0;
 	l = 0;
 	if (format == NULL)
 		return (func(-1, &args));
-	while (format[i] != 0)
+	while (*format)
 	{
-		if (format[i] == '%')
+		if (*format == '%')
 		{
-			l = l + func(format[i + 1], &args);
-			i++;
+			format++;
+			if (*format == '\0')
+				return (-1);
+			l = l + func((*format++), &args);
 		}
 		else
 		{
-			ft_putchar_fd(format[i], 1);
+			ft_putchar_fd(*format, 1);
 			l++;
+			format++;
 		}
-		i++;
 	}
 	va_end(args);
 	return (l);
 }
+// int	main(void)
+// {
+// 	int	x;
+// 	x = ft_printf("%%%", 'a');
+// 	printf("%d\n" , x);
+// }

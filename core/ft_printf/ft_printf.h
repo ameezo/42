@@ -6,12 +6,15 @@
 /*   By: aal-bann <aal-bann@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 12:39:24 by aal-bann          #+#    #+#             */
-/*   Updated: 2026/11/06 15:21:28 by aal-bann         ###   ########.fr       */
+/*   Updated: 2026/11/07 10:55:51 by aal-bann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include "libft/libft.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+
+# include <stdarg.h>
+# include "libft/libft.h"
 
 int	to_hex(unsigned long n, char s);
 int	ft_printf(const char *format, ...);
@@ -22,3 +25,4 @@ int	s_persent(va_list *arg);
 int	u_persent(va_list *arg);
 int	d_persent(va_list *arg);
 int	persent_persent(void);
+#endif
